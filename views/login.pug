@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1 Login
+    form(method ='post', action='/users/login')
+     #form-group 
+        label Username: 
+        input.form-control(name = 'username', type = 'username') 
+     #form-group 
+        label Password: 
+        input.form-control(name = 'password', type = 'password') 
+        br
+     input.btn.btn-primary.post-article(type = 'submit', value = 'Submit') 
+     |&nbsp; &nbsp; &nbsp;
+     a.btn.btn-primary(href='/users/register') register 

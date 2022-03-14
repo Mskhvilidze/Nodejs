@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    h1 Register
+    if !user
+      p= user
+      form(method ='post', action='/users/register')
+      #form-group 
+            label Name: 
+            input.form-control(name = 'name', type = 'name')
+      #form-group 
+         label E-Mail: 
+         input.form-control(name = 'email', type = 'email')
+      #form-group 
+         label Username: 
+         input.form-control(name = 'username', type = 'username') 
+      #form-group 
+         label Password: 
+         input.form-control(name = 'password', type = 'password') 
+      #form-group 
+         label Confrime: 
+         input.form-control(name = 'password1', type = 'password') 
+         br
+      input.btn.btn-primary.post-article(type = 'submit', value = 'Submit')
+      |&nbsp; &nbsp; &nbsp;
+      a.btn.btn-primary(href='/users/login') login
+    else 
+      p.info  Sie sind schon angemeldet 

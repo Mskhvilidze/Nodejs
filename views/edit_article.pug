@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1 #{title}
+    if user
+        if user == article.author 
+        form(method ='post', action='/article/edit/' + article._id)
+        #form-group 
+            label Title: 
+            input.form-control.title(name = 'title', type = 'text', value= 'Titel')
+        #form-group 
+            label Body: 
+            textarea.form-control(name = 'body') 
+            br
+        input.btn.btn-primary.update(type = 'submit', value = 'Submit', data-id = article._id)
